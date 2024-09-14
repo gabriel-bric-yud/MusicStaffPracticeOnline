@@ -160,32 +160,32 @@ function drawCorrectNote(note) {
       drawQuarterNoteUp(xStart,d4y *m,r,rm, 'green');;
       break;
     case 'C4':
-      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
       drawQuarterNoteUp(xStart,c4y *m,r,rm, 'green');
       break;
     case 'B3':
-      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
       drawQuarterNoteUp(xStart,b3y *m,r,rm, 'green');
       break;
     case 'A3':
-      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
-      drawLedgerLine(xStart + (r*2),a3y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),a3y*m,r*3);
       drawQuarterNoteUp(xStart,a3y *m,r,rm, 'green');
       break;
     case 'G3':
-      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
-      drawLedgerLine(xStart + (r*2),a3y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),a3y*m,r*3);
       drawQuarterNoteUp(xStart,g3y *m,r,rm, 'green');
       break;
     case 'F3':
-      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
-      drawLedgerLine(xStart + (r*2),a3y*m,r*3)
-      drawLedgerLine(xStart + (r*2),f3y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),a3y*m,r*3)
+      drawLedgerLine(xStart + (r*1.5),f3y*m,r*3);
       drawQuarterNoteUp(xStart,f3y *m,r,rm, 'green');
       break; 
     case 'E3':
-      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
-      drawLedgerLine(xStart + (r*2),a3y*m,r*3)
+      drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),a3y*m,r*3)
       drawQuarterNoteUp(xStart,e3y *m,r,rm, 'green');
       break;        
   }
@@ -232,9 +232,9 @@ let composition = []
 drawStaff(10,e4y,g4y,b4y,d5y,f5y,m,340)
 drawBarLine(10,262,200)
 drawBarLine(340,262,200)
-drawLedgerLine(xStart + (r*2),c4y*m,r*3);
-drawLedgerLine(xStart + (r*2),a3y*m,r*3);
-drawLedgerLine(xStart + (r*2),f3y*m,r*3);
+drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
+drawLedgerLine(xStart + (r*1.5),a3y*m,r*3);
+drawLedgerLine(xStart + (r*1.5),f3y*m,r*3);
 
 canvas.addEventListener('click', (e) => {
   x = e.clientX - canvas.offsetLeft + window.scrollX ;
@@ -366,7 +366,7 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawLedgerLine(xStart + (r*2),c4y*m,r*3); 
+        drawLedgerLine(xStart + (r*1.5),c4y*m,r*3); 
         drawQuarterNoteUp(xStart,c4y *m,r,rm, noteColor);
         playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(21))
         noteCount+=1;  
@@ -393,7 +393,7 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawLedgerLine(xStart + (r*2),a3y*m,r*3); 
+        drawLedgerLine(xStart + (r*1.5),a3y*m,r*3); 
         drawQuarterNoteUp(xStart,a3y *m,r,rm, noteColor);
         playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(19))
         noteCount+=1;  
@@ -420,7 +420,7 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawLedgerLine(xStart + (r*2),f3y*m,r*3); 
+        drawLedgerLine(xStart + (r*1.5),f3y*m,r*3); 
         drawQuarterNoteUp(xStart,f3y *m,r,rm, noteColor);
         playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(17))
         noteCount+=1;  
@@ -453,9 +453,9 @@ function reset() {
   drawBarLine(10,262,200)
   drawBarLine(340,262,200)
   xStart = 170;
-  drawLedgerLine(xStart + (r*2),c4y*m,r*3);
-  drawLedgerLine(xStart + (r*2),a3y*m,r*3);
-  drawLedgerLine(xStart + (r*2),f3y*m,r*3);
+  drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
+  drawLedgerLine(xStart + (r*1.5),a3y*m,r*3);
+  drawLedgerLine(xStart + (r*1.5),f3y*m,r*3);
   noteCount = 0;
   composition = []
 }

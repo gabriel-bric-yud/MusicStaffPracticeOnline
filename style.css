@@ -13,6 +13,7 @@ body {
 
 body {
   background: radial-gradient(navy, black);
+  min-height: 1000px;
 }
 
 #app {
@@ -50,7 +51,6 @@ canvas {
   box-sizing: border-box;
   background-color: white;
   box-shadow: -2px -2px 63px 10px rgba(0,0,0,0.75);
-  margin-bottom: 20px;
 
 }
  
@@ -58,18 +58,21 @@ canvas {
   margin: auto;
   justify-content: center;
   display: grid;
+  position: relative;
 }
 
 
 
 
 #note {
+  position: absolute;
   text-align: center;
   font-size: 40px;
   background-color: black;
-  color: gold;
+  color: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 0px 5px 0px 0px;
+  align-self: end;
 }
 
 
@@ -92,7 +95,7 @@ canvas {
 
 .playButton {
   padding: 20px;
-  margin: 0px;
+  margin: 20px auto;
   height: 5ch;
   border-radius: 20px;
   border-width: 2px;
