@@ -58,7 +58,6 @@ canvas {
   margin: auto;
   justify-content: center;
   display: grid;
-  position: relative;
 }
 
 
@@ -72,7 +71,8 @@ canvas {
   color: white;
   padding: 20px;
   border-radius: 0px 5px 0px 0px;
-  align-self: end;
+  left: 0px;
+  top: -84px;
 }
 
 
@@ -80,6 +80,7 @@ canvas {
   display: flex;
   justify-content: center;
   align-content: center;
+  position: relative;
 }
 
 

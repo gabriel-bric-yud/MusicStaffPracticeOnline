@@ -124,7 +124,6 @@ function drawStaff(x,ey,g4y,b4y,d5y,f5y, m, length) {
 
 
 function drawCorrectNote(note) {
-  console.log("draw correct note function: " + note[1])
   switch(note[1]) {
     case 'G5':
       drawQuarterNoteDown(xStart,g5y *m,r,rm, 'green');
@@ -240,8 +239,6 @@ canvas.addEventListener('click', (e) => {
   x = e.clientX - canvas.offsetLeft + window.scrollX ;
   y = e.clientY - canvas.offsetTop + window.scrollY;
   let noteColor
-  console.log(`X: ${x} | Y: ${y} `)
-  console.log(currentNote)
   if (noteCount < 1 &&  currentNote != undefined){
     if (y > (g5y*m) - (1 * 4) && y < (a4y* m) - (1 * 4)){
       if (y > (g5y*m) -(1 * 4) && y < (f5y *m)-(1 * 4)) {
