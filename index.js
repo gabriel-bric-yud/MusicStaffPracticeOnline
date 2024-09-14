@@ -199,13 +199,14 @@ let y
 const r = 20;
 const rm = 2;
 
-let xStart = 150;
+let xStart = 170;
 let noteCount = 0
 let composition = []
 
 drawStaff(20,ey,gy,by,dy,fy,m,280)
 drawBarLine(20,220,160)
 drawBarLine(280,220,160)
+drawLedgerLine(xStart + (r*1.5),c2y*m,r*3);
 
 canvas.addEventListener('click', (e) => {
   x = e.clientX - canvas.offsetLeft;
@@ -295,7 +296,7 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 300)
         }
-        drawQuarterNoteUp(xStart,gy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 4)); noteCount+=1;
+        drawQuarterNoteUp(xStart,gy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 4)); xStart += (23.5*m); noteCount+=1;
       }
       if (y > (f2y*m) -(5*m) && y < (ey *m)-(5*m)) {
         if (currentNote[1] == 'F3') { noteColor = 'green'}
@@ -343,8 +344,8 @@ canvas.addEventListener('click', (e) => {
       }
     }
   }
-  console.log(x/2,y/2)
-  console.log(composition) 
+  //console.log(x/2,y/2)
+ // console.log(composition) 
 });
 
 
@@ -353,7 +354,8 @@ function reset() {
   drawStaff(20,ey,gy,by,dy,fy,m,280)
   drawBarLine(20,220,160)
   drawBarLine(280,220,160)  
-  xStart = 150;
+  xStart = 170;
+  drawLedgerLine(xStart + (r*1.5),c2y*m,r*3);
   noteCount = 0;
   composition = []
 }
@@ -427,8 +429,9 @@ randomNote.addEventListener('click', (e) => {
   if (playerTurn == true) {
     reset()
     currentNote = chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-    console.log(currentNote)
-    console.log(currentNote[1])
+    //currentNote = getFrequencyMajorHectatonic(21)
+    //console.log(currentNote)
+    //console.log(currentNote[1])
     playOsc(osc1, "triangle", .1, 2, currentNote)
     document.querySelector('#note').textContent = currentNote[1]
   }
@@ -444,7 +447,6 @@ document.addEventListener('touchend', (e) => {
 
 
 function getFrequencyMajorHectatonic(num) {
-  console.log(num)
   let noteNum;
   let note;
   let freq;
@@ -504,7 +506,7 @@ function getFrequencyMajorHectatonic(num) {
   else {
     note = note + (multiplier)
   }
- console.log(freq)
+ console.log(note)
   
   //console.log("final freq: " + freq)
   //console.log("note name: " + note)
@@ -513,7 +515,6 @@ function getFrequencyMajorHectatonic(num) {
 
 function chooseRandomFrequency(min, size, callback) {
   let randomIndex = Math.floor(Math.random() * size) + min;
-  console.log(randomIndex)
   return callback(randomIndex); 
 }
 
