@@ -15,7 +15,7 @@ function drawQuarterNoteUp(sx, sy,r,rm, color) {
   ctx.arc(sx, sy, r, Math.PI * 2, 0, true);
   ctx.fillStyle = color
   ctx.fill();
-  ctx.fillRect(sx + (r/1.8),sy-(r*5.1),4 * rm,55 * rm)
+  ctx.fillRect(sx + (r/1.7),sy-(r*6),4 * rm,60 * rm)
 }
 
 
@@ -89,39 +89,34 @@ function drawLedgerLine(sx,sy,length) {
 }
 
 
-
-function drawStaff(x,ey,gy,by,dy,fy, m, length) {
+function drawStaff(x,ey,g4y,b4y,d5y,f5y, m, length) {
   ctx.beginPath(x,ey*m);
   ctx.moveTo(x,ey*m);
   ctx.lineTo(length, ey*m);
   ctx.stroke();
-
-  ctx.moveTo(x,gy *m);
-  ctx.lineTo(length, (gy*m));
+  ctx.moveTo(x,g4y *m);
+  ctx.lineTo(length, (g4y*m));
   ctx.stroke();
-
-  ctx.moveTo(x, by *m );
-  ctx.lineTo(length,(by*m));
+  ctx.moveTo(x, b4y *m );
+  ctx.lineTo(length,(b4y*m));
   ctx.stroke();
-
-  ctx.moveTo(x,dy *m);
-  ctx.lineTo(length,(dy*m));
+  ctx.moveTo(x,d5y *m);
+  ctx.lineTo(length,(d5y*m));
   ctx.stroke();
-
-  ctx.moveTo(x,fy *m);
-  ctx.lineTo(length,(fy*m));
+  ctx.moveTo(x,f5y *m);
+  ctx.lineTo(length,(f5y*m));
   ctx.stroke();
 
   
   trebleClef.addEventListener(
     "load",
     () => {
-      ctx.drawImage(trebleClef,-50, 10, 200, 310) 
+      ctx.drawImage(trebleClef,-50, -40, 200, 400) 
     },
     false
   )
 
-  ctx.drawImage(trebleClef,-50, 10, 200, 310) 
+  ctx.drawImage(trebleClef,-50, -40, 200, 400) 
    
 }
 
@@ -131,43 +126,68 @@ function drawStaff(x,ey,gy,by,dy,fy, m, length) {
 function drawCorrectNote(note) {
   console.log("draw correct note function: " + note[1])
   switch(note[1]) {
+    case 'G5':
+      drawQuarterNoteDown(xStart,g5y *m,r,rm, 'green');
+      break;
+    case 'F5':
+      drawQuarterNoteDown(xStart,f5y *m,r,rm, 'green'); 
+      break;
+    case 'E5':
+      drawQuarterNoteDown(xStart,e5y *m,r,rm, 'green'); 
+      break;
+    case 'D5':
+      drawQuarterNoteDown(xStart,d5y *m,r,rm, 'green'); 
+      break;
+    case 'C5':
+      drawQuarterNoteDown(xStart,cy5*m,r,rm, 'green'); 
+      break;
+    case 'B4':
+      drawQuarterNoteDown(xStart,b4y *m,r,rm, 'green'); 
+      break;
+    case 'A4':
+      drawQuarterNoteUp(xStart,a4y *m,r,rm, 'green');
+      break;
     case 'G4':
-      drawQuarterNoteDown(xStart,g2y *m,r,rm, 'green');
+      drawQuarterNoteUp(xStart,g4y *m,r,rm, 'green'); 
       break;
     case 'F4':
-      drawQuarterNoteDown(xStart,fy *m,r,rm, 'green'); 
+      drawQuarterNoteUp(xStart,f4y *m,r,rm, 'green'); 
       break;
     case 'E4':
-      drawQuarterNoteDown(xStart,e2y *m,r,rm, 'green'); 
+      drawQuarterNoteUp(xStart,e4y *m,r,rm, 'green'); 
       break;
     case 'D4':
-      drawQuarterNoteDown(xStart,dy *m,r,rm, 'green'); 
+      drawQuarterNoteUp(xStart,d4y *m,r,rm, 'green');;
       break;
     case 'C4':
-      drawQuarterNoteDown(xStart,cy *m,r,rm, 'green'); 
+      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawQuarterNoteUp(xStart,c4y *m,r,rm, 'green');
       break;
     case 'B3':
-      drawQuarterNoteDown(xStart,by *m,r,rm, 'green'); 
+      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawQuarterNoteUp(xStart,b3y *m,r,rm, 'green');
       break;
     case 'A3':
-      drawQuarterNoteUp(xStart,ay *m,r,rm, 'green');
+      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*2),a3y*m,r*3);
+      drawQuarterNoteUp(xStart,a3y *m,r,rm, 'green');
       break;
     case 'G3':
-      drawQuarterNoteUp(xStart,gy *m,r,rm, 'green'); 
+      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*2),a3y*m,r*3);
+      drawQuarterNoteUp(xStart,g3y *m,r,rm, 'green');
       break;
     case 'F3':
-      drawQuarterNoteUp(xStart,f2y *m,r,rm, 'green'); 
-      break;
+      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*2),a3y*m,r*3)
+      drawLedgerLine(xStart + (r*2),f3y*m,r*3);
+      drawQuarterNoteUp(xStart,f3y *m,r,rm, 'green');
+      break; 
     case 'E3':
-      drawQuarterNoteUp(xStart,ey *m,r,rm, 'green'); 
-      break;
-    case 'D3':
-      drawQuarterNoteUp(xStart,d2y *m,r,rm, 'green');;
-      break;
-    case 'C3':
-      drawLedgerLine(xStart + (r*1.5),c2y*m,r*3);
-      drawQuarterNoteUp(xStart,c2y *m,r,rm, 'green');
-      break;
+      drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+      drawLedgerLine(xStart + (r*2),a3y*m,r*3)
+      drawQuarterNoteUp(xStart,e3y *m,r,rm, 'green');
+      break;        
   }
 
   playOsc(osc1, "triangle", .1, 2, note)
@@ -177,45 +197,55 @@ function drawCorrectNote(note) {
 
 let playerTurn = true
 let currentNote
-const fy = 30;
-const dy = 50;
-const by = 70;
-const gy = 90;
-const ey = 110;
+const f5y = 25;
+const d5y = 45;
+const b4y = 65;
+const g4y = 85;
+const e4y = 105;
+const c4y = 125;
+const a3y = 145;
+const f3y = 165;
 
-const g2y = 20;
-const e2y = 40;
-const cy = 60;
-const ay = 80;
-const f2y = 100;
-const d2y = 120;
-const c2y = 130;
-const b2y = 140;
-const a2y = 150;
 
-const m = 2;
+const g5y = 15;
+const e5y = 35;
+const cy5= 55;
+const a4y= 75;
+const f4y = 95;
+const d4y = 115;
+const b3y = 135;
+const g3y = 155;
+const e3y = 175;
+
+
+
+const m = 2.5;
 let x
 let y
-const r = 20;
-const rm = 2;
+const r = 25;
+const rm = 2.5;
 
 let xStart = 170;
 let noteCount = 0
 let composition = []
 
-drawStaff(20,ey,gy,by,dy,fy,m,280)
-drawBarLine(20,220,160)
-drawBarLine(280,220,160)
-drawLedgerLine(xStart + (r*1.5),c2y*m,r*3);
+drawStaff(10,e4y,g4y,b4y,d5y,f5y,m,340)
+drawBarLine(10,262,200)
+drawBarLine(340,262,200)
+drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+drawLedgerLine(xStart + (r*2),a3y*m,r*3);
+drawLedgerLine(xStart + (r*2),f3y*m,r*3);
 
 canvas.addEventListener('click', (e) => {
-  x = e.clientX - canvas.offsetLeft;
-  y = e.clientY - canvas.offsetTop;
+  x = e.clientX - canvas.offsetLeft + window.scrollX ;
+  y = e.clientY - canvas.offsetTop + + window.scrollY;
   let noteColor
+  console.log(`X: ${x} | Y: ${y} `)
+  console.log(currentNote)
   if (noteCount < 1 &&  currentNote != undefined){
-    if (y > (g2y*m) - (5*m) && y < (ay * m) - (5*m)){
-      if (y > (g2y*m) -(5*m) && y < (fy *m)-(5*m)) {
-        if (currentNote[1] == 'G4') { 
+    if (y > (g5y*m) - (1 * 4) && y < (a4y* m) - (1 * 4)){
+      if (y > (g5y*m) -(1 * 4) && y < (f5y *m)-(1 * 4)) {
+        if (currentNote[1] == 'G5') { 
           noteColor = 'green'
         }
         else {
@@ -224,9 +254,81 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteDown(xStart,g2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 11)); xStart += (23.5*m); noteCount+=1;
+        drawQuarterNoteDown(xStart,g5y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(32)); xStart += (35*m); noteCount+=1;
       }
-      if (y > (fy*m) -(5*m) && y < (e2y *m)-(5*m)) {
+      if (y > (f5y*m) -(1 * 4) && y < (e5y *m)-(1 * 4)) {
+        if (currentNote[1] == 'F5') { noteColor = 'green'}
+        else {
+          noteColor = 'red'
+          setTimeout(() => {
+            drawCorrectNote(currentNote)
+          }, 450)
+        }
+        drawQuarterNoteDown(xStart,f5y *m,r,rm, noteColor);playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(31)); xStart += (35*m); noteCount+=1;  
+      }
+      if (y > (e5y*m) -(1 * 4) && y < (d5y *m)-(1 * 4)) {
+        if (currentNote[1] == 'E5') { noteColor = 'green'}
+        else {
+          noteColor = 'red'
+          setTimeout(() => {
+            drawCorrectNote(currentNote)
+          }, 450)
+        }
+        drawQuarterNoteDown(xStart,e5y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(30)); xStart += (35*m); noteCount+=1;
+      }
+      if (y > (d5y*m) -(1 * 4) && y < (cy5*m)-(1 * 4)) {
+        if (currentNote[1] == 'D5') { noteColor = 'green'}
+        else {
+          noteColor = 'red'
+          setTimeout(() => {
+            drawCorrectNote(currentNote)
+          }, 450)
+        }
+        drawQuarterNoteDown(xStart,d5y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(29)); xStart += (35*m); noteCount+=1;
+      }
+      if (y > (cy5*m) -(1 * 4) && y < (b4y *m)-(1 * 4)) {
+        if (currentNote[1] == 'C5') { noteColor = 'green'}
+        else {
+          noteColor = 'red'
+          setTimeout(() => {
+            drawCorrectNote(currentNote)
+          }, 450)
+        }
+        drawQuarterNoteDown(xStart,cy5*m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(28)); xStart += (35*m); noteCount+=1;
+      }
+      if (y > (b4y*m) -(1 * 4) && y < (a4y*m)-(1 * 4)) {
+        if (currentNote[1] == 'B4') { noteColor = 'green'}
+        else {
+          noteColor = 'red'
+          setTimeout(() => {
+            drawCorrectNote(currentNote)
+          }, 450)
+        }
+        drawQuarterNoteDown(xStart,b4y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(27)); xStart += (35*m); noteCount+=1;
+      }
+    }
+    else if (y > (a4y*m) - (1 * 4) && y < 450) {
+      if (y > (a4y*m) -(1 * 4) && y < (g4y *m)-(1 * 4)) {
+        if (currentNote[1] == 'A4') { noteColor = 'green'}
+        else {
+          noteColor = 'red'
+          setTimeout(() => {
+            drawCorrectNote(currentNote)
+          }, 450)
+        }
+        drawQuarterNoteUp(xStart,a4y*m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(26)); xStart += (35*m); noteCount+=1;
+      }
+      if (y > (g4y*m) -(1 * 4) && y < (f4y *m)-(1 * 4)) {
+        if (currentNote[1] == 'G4') { noteColor = 'green'}
+        else {
+          noteColor = 'red'
+          setTimeout(() => {
+            drawCorrectNote(currentNote)
+          }, 450)
+        }
+        drawQuarterNoteUp(xStart,g4y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(25)); xStart += (35*m); noteCount+=1;
+      }
+      if (y > (f4y*m) -(1 * 4) && y < (e4y *m)-(1 * 4)) {
         if (currentNote[1] == 'F4') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -234,9 +336,9 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteDown(xStart,fy *m,r,rm, noteColor);playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 10)); xStart += (23.5*m); noteCount+=1;  
+        drawQuarterNoteUp(xStart,f4y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(24)); xStart += (35*m); noteCount+=1;
       }
-      if (y > (e2y*m) -(5*m) && y < (dy *m)-(5*m)) {
+      if (y > (e4y*m) -(1 * 4) && y < (d4y *m)-(1 * 4)) {
         if (currentNote[1] == 'E4') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -244,9 +346,9 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteDown(xStart,e2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 9)); xStart += (23.5*m); noteCount+=1;
+        drawQuarterNoteUp(xStart,e4y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(23)); xStart += (35*m); noteCount+=1;
       }
-      if (y > (dy*m) -(5*m) && y < (cy *m)-(5*m)) {
+      if (y > (d4y*m) -(1 * 4) && y < (c4y *m)-(1 * 4)) {
         if (currentNote[1] == 'D4') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -254,9 +356,9 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteDown(xStart,dy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 8)); xStart += (23.5*m); noteCount+=1;
+        drawQuarterNoteUp(xStart,d4y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(22)); xStart += (35*m); noteCount+=1;
       }
-      if (y > (cy*m) -(5*m) && y < (by *m)-(5*m)) {
+      if (y > (c4y*m) -(1 * 4) && y < (b3y *m)-(1 * 4)) {
         if (currentNote[1] == 'C4') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -264,9 +366,13 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteDown(xStart,cy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 7)); xStart += (23.5*m); noteCount+=1;
+        drawLedgerLine(xStart + (r*2),c4y*m,r*3); 
+        drawQuarterNoteUp(xStart,c4y *m,r,rm, noteColor);
+        playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(21))
+        noteCount+=1;  
+        xStart += (35*m);
       }
-      if (y > (by*m) -(5*m) && y < (ay *m)-(5*m)) {
+      if (y > (b3y*m) -(1 * 4) && y < (a3y *m)-(1 * 4)) {
         if (currentNote[1] == 'B3') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -274,11 +380,12 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteDown(xStart,by *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 6)); xStart += (23.5*m); noteCount+=1;
+        drawQuarterNoteUp(xStart,b3y *m,r,rm, noteColor);
+        playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(20))
+        noteCount+=1;  
+        xStart += (35*m);
       }
-    }
-    else if (y > (ay *m) - (5*m) && y < (a2y*m) - (5*m)) {
-      if (y > (ay*m) -(5*m) && y < (gy *m)-(5*m)) {
+      if (y > (a3y*m) -(1 * 4) && y < (g3y *m)-(1 * 4)) {
         if (currentNote[1] == 'A3') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -286,9 +393,13 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteUp(xStart,ay *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 5)); xStart += (23.5*m); noteCount+=1;
+        drawLedgerLine(xStart + (r*2),a3y*m,r*3); 
+        drawQuarterNoteUp(xStart,a3y *m,r,rm, noteColor);
+        playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(19))
+        noteCount+=1;  
+        xStart += (35*m);
       }
-      if (y > (gy*m) -(5*m) && y < (f2y *m)-(5*m)) {
+      if (y > (g3y*m) -(1 * 4) && y < (f3y *m)-(1 * 4)) {
         if (currentNote[1] == 'G3') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -296,9 +407,12 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteUp(xStart,gy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 4)); xStart += (23.5*m); noteCount+=1;
+        drawQuarterNoteUp(xStart,g3y *m,r,rm, noteColor);
+        playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(18))
+        noteCount+=1;  
+        xStart += (35*m);
       }
-      if (y > (f2y*m) -(5*m) && y < (ey *m)-(5*m)) {
+      if (y > (f3y*m) -(1 * 4) && y < (e3y *m)-(1 * 4)) {
         if (currentNote[1] == 'F3') { noteColor = 'green'}
         else {
           noteColor = 'red'
@@ -306,42 +420,26 @@ canvas.addEventListener('click', (e) => {
             drawCorrectNote(currentNote)
           }, 450)
         }
-        drawQuarterNoteUp(xStart,f2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 3)); xStart += (23.5*m); noteCount+=1;
-      }
-      if (y > (ey*m) -(5*m) && y < (d2y *m)-(5*m)) {
-        if (currentNote[1] == 'E3') { noteColor = 'green'}
-        else {
-          noteColor = 'red'
-          setTimeout(() => {
-            drawCorrectNote(currentNote)
-          }, 450)
-        }
-        drawQuarterNoteUp(xStart,ey *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 2)); xStart += (23.5*m); noteCount+=1;
-      }
-      if (y > (d2y*m) -(5*m) && y < (c2y *m)-(5*m)) {
-        if (currentNote[1] == 'D3') { noteColor = 'green'}
-        else {
-          noteColor = 'red'
-          setTimeout(() => {
-            drawCorrectNote(currentNote)
-          }, 450)
-        }
-        drawQuarterNoteUp(xStart,d2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 1)); xStart += (23.5*m); noteCount+=1;
-      }
-      if (y > (c2y*m) -(5*m) && y < (b2y *m)-(5*m)) {
-        if (currentNote[1] == 'C3') { noteColor = 'green'}
-        else {
-          noteColor = 'red'
-          setTimeout(() => {
-            drawCorrectNote(currentNote)
-          }, 450)
-        }
-        drawLedgerLine(xStart + (r*1.5),c2y*m,r*3); 
-        drawQuarterNoteUp(xStart,c2y *m,r,rm, noteColor);
-        playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14))
+        drawLedgerLine(xStart + (r*2),f3y*m,r*3); 
+        drawQuarterNoteUp(xStart,f3y *m,r,rm, noteColor);
+        playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(17))
         noteCount+=1;  
-        xStart += (23.5*m);
+        xStart += (35*m);
       }
+    }
+
+    if (y > (e3y*m) -(1 * 4) && y < (e3y*m) + (1 * 4)) {
+      if (currentNote[1] == 'E3') { noteColor = 'green'}
+      else {
+        noteColor = 'red'
+        setTimeout(() => {
+          drawCorrectNote(currentNote)
+        }, 450)
+      }
+      drawQuarterNoteUp(xStart,e3y *m,r,rm, noteColor);
+      playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(16))
+      noteCount+=1;  
+      xStart += (35*m);
     }
   }
   //console.log(x/2,y/2)
@@ -351,11 +449,13 @@ canvas.addEventListener('click', (e) => {
 
 function reset() {
   ctx.clearRect(0,0,canvas.width, canvas.height);
-  drawStaff(20,ey,gy,by,dy,fy,m,280)
-  drawBarLine(20,220,160)
-  drawBarLine(280,220,160)  
+  drawStaff(10,e4y,g4y,b4y,d5y,f5y,m,340)
+  drawBarLine(10,262,200)
+  drawBarLine(340,262,200)
   xStart = 170;
-  drawLedgerLine(xStart + (r*1.5),c2y*m,r*3);
+  drawLedgerLine(xStart + (r*2),c4y*m,r*3);
+  drawLedgerLine(xStart + (r*2),a3y*m,r*3);
+  drawLedgerLine(xStart + (r*2),f3y*m,r*3);
   noteCount = 0;
   composition = []
 }
@@ -428,8 +528,8 @@ const randomNote = document.querySelector('#randomNote');
 randomNote.addEventListener('click', (e) => {
   if (playerTurn == true) {
     reset()
-    currentNote = chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-    //currentNote = getFrequencyMajorHectatonic(21)
+    currentNote = chooseRandomFrequency(16, 16, getFrequencyMajorHectatonic)
+    //currentNote = getFrequencyMajorHectatonic(32)
     //console.log(currentNote)
     //console.log(currentNote[1])
     playOsc(osc1, "triangle", .1, 2, currentNote)
@@ -506,7 +606,7 @@ function getFrequencyMajorHectatonic(num) {
   else {
     note = note + (multiplier)
   }
- console.log(note)
+
   
   //console.log("final freq: " + freq)
   //console.log("note name: " + note)
@@ -521,7 +621,6 @@ function chooseRandomFrequency(min, size, callback) {
 
 
 function playOsc(osc, type, gain, sustain, freq) {
-  console.log(freq[1])
   let stopTime = Number(.5)
   let oscGain = audioCtx.createGain();
   oscGain.gain.value = .5;
@@ -537,16 +636,3 @@ function playOsc(osc, type, gain, sustain, freq) {
 }
 
 
-/** 
-chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic)
-
-
-
-playOsc(osc1, "triangle", .1, 2, chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic))
-playOsc(osc1, "triangle", .1, 2, chooseRandomFrequency(14, 12, getFrequencyMajorHectatonic))
-*/

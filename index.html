@@ -6,6 +6,9 @@
     <meta charset = "UTF-8">
     <title>Music Learning JS</title>
     <meta name ="viewport" content = "width=device-width, initial-scale = 1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tektur" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
 </head>
@@ -16,17 +19,18 @@
       <a href = "">Find the Note!</a>
     </div>
     <div class = "staffDiv">
-      <canvas width = "300px" height = "300px"> </canvas>
+      <canvas width = "350px" height = "470px"> </canvas>
     </div>
 
     <div class = "bottomBar">
-        <h4><span id= 'note'>Lets begin!</span></h4>
+        <h4><span id= 'note'>???</span></h4>
+        <div class = playButtonContainer>
+          <button class= 'playButton' id = 'randomNote'>Random Note</button>
+          <!-- <button class= 'playButton' id = 'repeatButton' onclick="playLastSound()">Repeat Interval</button> --->
+      </div>
     </div>
 
-    <div class = playButtonContainer>
-        <button class= 'playButton' id = 'randomNote'>Random Note</button>
-        <!-- <button class= 'playButton' id = 'repeatButton' onclick="playLastSound()">Repeat Interval</button> --->
-    </div>
+
       
 
   </div>

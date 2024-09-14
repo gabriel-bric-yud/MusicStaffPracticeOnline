@@ -1,6 +1,7 @@
 
 html {
   height: 100%;
+
 }
 
 /**
@@ -10,41 +11,47 @@ body {
 }
   */
 
-  #app {
-    width: 100%;
-    display: grid;
-    position: relative;
-    justify-content: center;
-    justify-self: center;
-    text-align: center;
-    margin: 0 auto;
-    cursor: default;
-  }
+body {
+  background: radial-gradient(navy, black);
+}
+
+#app {
+
+  display: grid;
+  position: relative;
+  justify-content: center;
+  justify-self: center;
+  text-align: center;
+  margin: 0 auto;
+  cursor: default;
+}
   
-  .titleDiv {
-    display: grid;
-    width: fit-content;
-    margin: 10px auto;
-    padding: 0px;
-    color: white;
-    text-align: center;
-    z-index: 1000;
-  }
+.titleDiv {
+  display: grid;
+  width: fit-content;
+  margin: 10px auto;
+  padding: 0px;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+}
   
-  .titleDiv a {
-    margin: 0 auto;
-    font-family: "Tektur", system-ui;
-    color: Black;
-    font-size: 2.5em ;
-    font-weight: bold;
-    text-decoration: none;
-  }
+.titleDiv a {
+  margin: 0 auto;
+  font-family: "Tektur", system-ui;
+  color: Orange;
+  font-size: 2.5em ;
+  text-decoration: none;
+}
   
   
 
 canvas {
   box-sizing: border-box;
   background-color: white;
+  box-shadow: -2px -2px 63px 10px rgba(0,0,0,0.75);
+  margin-bottom: 20px;
+
 }
  
 .staffDiv {
@@ -54,14 +61,22 @@ canvas {
 }
 
 
-.bottomBar {
-  margin: none;
-  justify-content: center;
-  display: grid;
-}
+
 
 #note {
-  font-size: 50px;
+  text-align: center;
+  font-size: 40px;
+  background-color: black;
+  color: gold;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+
+.bottomBar {
+  display: flex;
+  justify-content: center;
+  align-content: center;
 }
 
 
@@ -76,11 +91,10 @@ canvas {
 }
 
 .playButton {
-  padding: 5px;
+  padding: 20px;
   margin: 0px;
-  width: 12ch;
-  height: 12ch;
-  border-radius: 50%;
+  height: 5ch;
+  border-radius: 20px;
   border-width: 2px;
   font-size: 30px;
   text-align: center;
@@ -97,6 +111,38 @@ canvas {
 }
 
 
+
+
+/**
+
+@media (min-width: 749px) {
+
+  .bottomBar {
+    margin: none;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: none;
+  }
+
+  .playButton {
+    padding: 10px;
+    margin: 5px auto;
+    width: 8ch;
+    height: 8ch;
+    border-radius: 50%;
+    border-width: 2px;
+    font-size: 30px;
+    text-align: center;
+    justify-content: center;
+    background-color: lightgreen;
+  }
+
+  #note {
+    border-radius: 10px;
+  }
+
+}
+*/
 
 
  
