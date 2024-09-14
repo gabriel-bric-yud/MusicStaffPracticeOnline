@@ -66,13 +66,13 @@ canvas {
 #note {
   position: absolute;
   text-align: center;
-  font-size: 40px;
+  font-size: 60px;
   background-color: black;
-  color: white;
+  color: yellow;
   padding: 20px;
   border-radius: 0px 5px 0px 0px;
   left: 0px;
-  top: -84px;
+  top: -108px;
 }
 
 
