@@ -238,7 +238,7 @@ drawLedgerLine(xStart + (r*1.5),f3y*m,r*3);
 
 canvas.addEventListener('click', (e) => {
   x = e.clientX - canvas.offsetLeft + window.scrollX ;
-  y = e.clientY - canvas.offsetTop + + window.scrollY;
+  y = e.clientY - canvas.offsetTop + window.scrollY;
   let noteColor
   console.log(`X: ${x} | Y: ${y} `)
   console.log(currentNote)
