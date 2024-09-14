@@ -618,7 +618,7 @@ function chooseRandomFrequency(min, size, callback) {
 
 
 function playOsc(osc, type, gain, sustain, freq) {
-  let stopTime = Number(.5)
+  let stopTime = Number(.4)
   let oscGain = audioCtx.createGain();
   oscGain.gain.value = .5;
   osc = audioCtx.createOscillator();
