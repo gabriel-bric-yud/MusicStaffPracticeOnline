@@ -111,12 +111,12 @@ function drawStaff(x,ey,g4y,b4y,d5y,f5y, m, length) {
   trebleClef.addEventListener(
     "load",
     () => {
-      ctx.drawImage(trebleClef,-50, -40, 200, 400) 
+      ctx.drawImage(trebleClef,-50, -20, 200, 420) 
     },
     false
   )
 
-  ctx.drawImage(trebleClef,-50, -40, 200, 400) 
+  ctx.drawImage(trebleClef,-50, -20, 200, 420)  
    
 }
 
