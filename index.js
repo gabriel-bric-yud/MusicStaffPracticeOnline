@@ -222,7 +222,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteDown(xStart,g2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 11)); xStart += (23.5*m); noteCount+=1;
       }
@@ -232,7 +232,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteDown(xStart,fy *m,r,rm, noteColor);playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 10)); xStart += (23.5*m); noteCount+=1;  
       }
@@ -242,7 +242,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteDown(xStart,e2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 9)); xStart += (23.5*m); noteCount+=1;
       }
@@ -252,7 +252,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteDown(xStart,dy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 8)); xStart += (23.5*m); noteCount+=1;
       }
@@ -262,7 +262,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteDown(xStart,cy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 7)); xStart += (23.5*m); noteCount+=1;
       }
@@ -272,7 +272,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteDown(xStart,by *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 6)); xStart += (23.5*m); noteCount+=1;
       }
@@ -284,7 +284,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteUp(xStart,ay *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 5)); xStart += (23.5*m); noteCount+=1;
       }
@@ -294,7 +294,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteUp(xStart,gy *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 4)); xStart += (23.5*m); noteCount+=1;
       }
@@ -304,7 +304,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteUp(xStart,f2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 3)); xStart += (23.5*m); noteCount+=1;
       }
@@ -314,7 +314,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteUp(xStart,ey *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 2)); xStart += (23.5*m); noteCount+=1;
       }
@@ -324,7 +324,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawQuarterNoteUp(xStart,d2y *m,r,rm, noteColor); playOsc(osc1, "triangle", .1, 2, getFrequencyMajorHectatonic(14 + 1)); xStart += (23.5*m); noteCount+=1;
       }
@@ -334,7 +334,7 @@ canvas.addEventListener('click', (e) => {
           noteColor = 'red'
           setTimeout(() => {
             drawCorrectNote(currentNote)
-          }, 300)
+          }, 450)
         }
         drawLedgerLine(xStart + (r*1.5),c2y*m,r*3); 
         drawQuarterNoteUp(xStart,c2y *m,r,rm, noteColor);
