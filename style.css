@@ -1,0 +1,103 @@
+
+html {
+  height: 100%;
+}
+
+/**
+body {
+  background-color: navy;
+  background: radial-gradient(navy, black);
+}
+  */
+
+  #app {
+    width: 100%;
+    display: grid;
+    position: relative;
+    justify-content: center;
+    justify-self: center;
+    text-align: center;
+    margin: 0 auto;
+    cursor: default;
+  }
+  
+  .titleDiv {
+    display: grid;
+    width: fit-content;
+    margin: 10px auto;
+    padding: 0px;
+    color: white;
+    text-align: center;
+    z-index: 1000;
+  }
+  
+  .titleDiv a {
+    margin: 0 auto;
+    font-family: "Tektur", system-ui;
+    color: Black;
+    font-size: 2.5em ;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  
+
+canvas {
+  box-sizing: border-box;
+  background-color: white;
+}
+ 
+.staffDiv {
+  margin: auto;
+  justify-content: center;
+  display: grid;
+}
+
+
+.bottomBar {
+  margin: none;
+  justify-content: center;
+  display: grid;
+}
+
+#note {
+  font-size: 50px;
+}
+
+
+
+/*********************************************************************************************************************************/
+
+
+
+.playButtonContainer {
+  margin: 0px auto;
+  justify-content: center;
+}
+
+.playButton {
+  padding: 5px;
+  margin: 0px;
+  width: 12ch;
+  height: 12ch;
+  border-radius: 50%;
+  border-width: 2px;
+  font-size: 30px;
+  text-align: center;
+  justify-content: center;
+  background-color: lightgreen;
+}
+
+#repeatButton {
+  background-color: lightskyblue;
+}
+
+.playButton:hover {
+  opacity: .8;
+}
+
+
+
+
+ 
+ 
