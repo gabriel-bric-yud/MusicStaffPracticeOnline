@@ -13,7 +13,7 @@ function drawQuarterNoteUp(sx, sy,r,rm, color) {
   ctx.moveTo(sx,sy)
   ctx.beginPath(sx,sy);
   ctx.arc(sx, sy, r, Math.PI * 2, 0, true);
-  ctx.fillStyle = color
+  ctx.fillStyle = "black" //color
   ctx.fill();
   ctx.fillRect(sx + (r/1.7),sy-(r*6),4 * rm,60 * rm)
 }
@@ -23,7 +23,7 @@ function drawQuarterNoteDown(sx, sy,r, rm, color) {
   ctx.moveTo(sx,sy)
   ctx.beginPath(sx,sy);
   ctx.arc(sx, sy, r, Math.PI * 2, 0, true);
-  ctx.fillStyle = color
+  ctx.fillStyle = "black" //color
   ctx.fill();
   ctx.fillRect((sx-r),sy,4 * rm,(55 * rm))
 }
@@ -184,7 +184,8 @@ function drawCorrectNote(note) {
       break; 
     case 'E3':
       drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
-      drawLedgerLine(xStart + (r*1.5),a3y*m,r*3)
+      drawLedgerLine(xStart + (r*1.5),a3y*m,r*3);
+      drawLedgerLine(xStart + (r*1.5),f3y*m,r*3);
       drawQuarterNoteUp(xStart,e3y *m,r,rm, 'green');
       break;        
   }
@@ -425,7 +426,7 @@ canvas.addEventListener('click', (e) => {
       }
     }
 
-    if (y > (e3y*m) -(1 * 4) && y < (e3y*m) + (1 * 4)) {
+    if (y > (e3y*m) -(1 * 4) && y < (e3y*m) + (35)) {
       if (currentNote[1] == 'E3') { noteColor = 'green'}
       else {
         noteColor = 'red'

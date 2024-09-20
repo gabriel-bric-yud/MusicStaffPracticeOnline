@@ -52,6 +52,7 @@ canvas {
   box-sizing: border-box;
   background-color: white;
   box-shadow: -2px -2px 63px 10px rgba(0,0,0,0.75);
+  border-radius: 20px;
 
 }
  
@@ -70,8 +71,8 @@ canvas {
   background-color: orange;
   color: black;
   padding: 20px;
-  border-radius: 5px 0px 0px 0px;
-  right: 0px;
+  border-radius: 0px 20px 0px 20px;
+  left: 0px;
   top: -88%;
   width: 2.5ch;
 }
