@@ -67,12 +67,13 @@ canvas {
   position: absolute;
   text-align: center;
   font-size: 60px;
-  background-color: black;
-  color: yellow;
+  background-color: orange;
+  color: black;
   padding: 20px;
-  border-radius: 0px 5px 0px 0px;
-  left: 0px;
-  top: -108px;
+  border-radius: 5px 0px 0px 0px;
+  right: 0px;
+  top: -88%;
+  width: 2.5ch;
 }
 
 
