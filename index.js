@@ -1,7 +1,7 @@
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 const trebleClef = new Image()
-trebleClef.src = 'imgs/trebleclefsymbol.png'
+trebleClef.src = 'imgs/trebleclefHD.png'
 
 
 let osc1
@@ -111,12 +111,12 @@ function drawStaff(x,ey,g4y,b4y,d5y,f5y, m, length) {
   trebleClef.addEventListener(
     "load",
     () => {
-      ctx.drawImage(trebleClef,-50, -20, 200, 420) 
+      ctx.drawImage(trebleClef,-36, 6, 200, 350) 
     },
     false
   )
 
-  ctx.drawImage(trebleClef,-50, -20, 200, 420)  
+  ctx.drawImage(trebleClef,-36, 6, 200, 350) 
    
 }
 
@@ -229,9 +229,9 @@ let xStart = 170;
 let noteCount = 0
 let composition = []
 
-drawStaff(10,e4y,g4y,b4y,d5y,f5y,m,340)
+drawStaff(10,e4y,g4y,b4y,d5y,f5y,m,350)
 drawBarLine(10,262,200)
-drawBarLine(340,262,200)
+drawBarLine(330,262,200)
 drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
 drawLedgerLine(xStart + (r*1.5),a3y*m,r*3);
 drawLedgerLine(xStart + (r*1.5),f3y*m,r*3);
@@ -447,9 +447,9 @@ canvas.addEventListener('click', (e) => {
 
 function reset() {
   ctx.clearRect(0,0,canvas.width, canvas.height);
-  drawStaff(10,e4y,g4y,b4y,d5y,f5y,m,340)
+  drawStaff(10,e4y,g4y,b4y,d5y,f5y,m,350)
   drawBarLine(10,262,200)
-  drawBarLine(340,262,200)
+  drawBarLine(330,262,200)
   xStart = 170;
   drawLedgerLine(xStart + (r*1.5),c4y*m,r*3);
   drawLedgerLine(xStart + (r*1.5),a3y*m,r*3);
@@ -619,11 +619,11 @@ function chooseRandomFrequency(min, size, callback) {
 
 
 function playOsc(osc, type, gain, sustain, freq) {
-  let stopTime = Number(.4)
+  let stopTime = Number(.27)
   let oscGain = audioCtx.createGain();
   oscGain.gain.value = .2;
   osc = audioCtx.createOscillator();
-  osc.type =  "sine"// type//"sawtooth" //"square";
+  osc.type =  "triangle"// type//"sawtooth" //"square";
   osc.frequency.setValueAtTime(freq[0], audioCtx.currentTime);
   osc.connect(oscGain).connect(audioCtx.destination);
   osc.start(audioCtx.currentTime)
